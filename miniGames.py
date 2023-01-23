@@ -32,9 +32,9 @@ def simpleMath():
 #tictactoe
 def ticTacToe():
     #             0   1   2   3   4   5   6   7   8  
-    row1 = ["X","_","_"]
-    row2 = ["_","O","_"]
-    row3 = ["X","X","X"]
+    row1 = ["_0","_1","_2"]
+    row2 = ["_3","_4","_5"]
+    row3 = ["_6","_7","_8"]
    
     symbolLoop = 1
     while(symbolLoop == 1):
@@ -49,6 +49,8 @@ def ticTacToe():
     tacGameLoop = 1
     while(tacGameLoop == 1):
         ctr = 0
+        
+        #this is being printed wrong
         for x in row1:
             print(row1[ctr] + row2[ctr] + row3[ctr])
             ctr = ctr+1 
@@ -57,14 +59,18 @@ def ticTacToe():
         print("345")
         print("678")
 
+        #this is not updating the array correctly
         if(placement == 0 or placement == 1 or placement == 2):
-            row1[placement] = playerSymbol
+            row1.pop(placement)
+            row1.insert(placement)
         elif(placement == 3 or placement == 4 or placement == 5):
             row2[placement] = playerSymbol
         elif(placement == 6 or placement == 7 or placement == 8):
             row3[placement] = playerSymbol
 
-        tacGameLoop = 0
+        tempCtr= tempCtr + 1
+        if(tempCtr == 2):
+            tacGameLoop = 0
         
 
 
