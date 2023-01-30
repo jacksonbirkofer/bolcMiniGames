@@ -64,14 +64,48 @@ def ticTacToe():
             row1.pop(placement)
             row1.insert(placement)
         elif(placement == 3 or placement == 4 or placement == 5):
-            row2[placement] = playerSymbol
+            row2.pop(placement)
+            row2.insert(placement)
         elif(placement == 6 or placement == 7 or placement == 8):
-            row3[placement] = playerSymbol
+            row3.pop(placement)
+            row3.insert(placement)
 
         tempCtr= tempCtr + 1
         if(tempCtr == 2):
             tacGameLoop = 0
         
+#neptune's prided calculator
+def neptuneCalc():
+    nepLoop = 1
+    while(nepLoop == 1):
+        print("1: Manufacuring Calculator ")
+        print("2: Economy Calculator Calculator ")
+        print("3: Experimentation Calculator ")
+        print("4: Scanning Calculator ")
+        print("5: Hyperspace Calculator ")
+        print("0: Exit")
+        nepInput = input("Choose an option: ")
+        
+        if(nepInput == "1"):
+           manLoop = 1
+           while(manLoop == 1):
+                x = input("What is your manufacturing level: ")
+                y = input("What is the industry at your star: ")
+                manPerHour = y*(x+5)
+                print("Your star will produce " + manPerHour + " per hour.")
+                again = input("Type q if you want to quit, if not press enter.")
+                if(again == "q"):
+                    manLoop = 0
+        elif(nepInput == "2"):
+            printFunc() 
+        elif(nepInput == "3"):
+            ticTacToe()
+        elif(nepInput == "4"):
+            neptuneCalc()
+        else:
+            nepLoop = 0
+
+
 
 
 
@@ -83,6 +117,7 @@ def main():
         print("1: Simple math")
         print("2: Fun with printing")
         print("3: TicTacToe")
+        print("4: Neptune's Pride Calculator")
         print("0: Close program") 
         userInput = input("What do you want to do?: ") 
         
@@ -92,9 +127,10 @@ def main():
             printFunc() 
         elif(userInput == "3"):
             ticTacToe()
+        elif(userInput == "4"):
+            neptuneCalc()
         else:
             mainLoop = 0
-        print(" ")
 
 #run the main function
 main()
